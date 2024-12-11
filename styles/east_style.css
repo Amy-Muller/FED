@@ -1,0 +1,334 @@
+/* ////////////////////////////////////////
+        BODY
+/////////////////////////////////////// */
+
+body {
+  position: relative;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--yellow-background) 950px,
+    var(--background-body) 0
+  );
+}
+
+/* ////////////////////////////////////////
+        SECTIONS
+/////////////////////////////////////// */
+
+main > section:first-of-type a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:var(--fontlightbackground-color);
+  font-family: "Casa-bodytekst", sans-serif;
+  font-weight: bold;
+  margin: 1em;
+  text-decoration: 4px underline;
+  text-underline-offset: 5px;
+}
+
+main > section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3em;
+}
+
+main > section:first-of-type > div:first-of-type a {
+  padding: 1em;
+}
+main > section:first-of-type a svg {
+  padding: 0;
+}
+
+main > section:first-of-type > div:first-of-type{
+display:flex;
+gap:2em;
+}
+
+main > section:first-of-type > div:nth-of-type(2){
+  display:flex;
+  }
+
+main > section:nth-of-type(3) > section > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 7/9;
+}
+
+main > section:nth-of-type(3) {
+  display: grid;
+  gap:1em;
+  margin: 4em;
+}
+
+section:nth-of-type(3) > section {
+  display: flex;
+  flex-direction: column;
+}
+
+main > section:nth-of-type(4) {
+  background-color: var(--grey-background);
+  margin: -1em;
+  padding: 3em 1.5em;
+}
+
+main > section:nth-of-type(5){
+  padding:1em;
+}
+  
+summary img{
+  width:25px;
+}
+
+main> section:nth-of-type(4) > p:first-of-type{
+max-width: 200px;
+}
+
+/* ////////////////////////////////////////
+        BUTTON
+/////////////////////////////////////// */
+
+main > section:nth-of-type(4) > button {
+  background-color: var(--grey-background);
+  padding:1em;
+  cursor: pointer;
+  border:3px solid var(--fontlightbackground-color);
+  justify-content: space-between;
+  width:100%;
+  color: var(--fontlightbackground-color);
+  align-items: center;
+  display: flex;
+  font-family: "Casa-bodytekst", sans-serif;
+  font-weight: 900;
+  font-size: 1.1em;
+}
+
+main > section:nth-of-type(4) > button:hover {
+  background-color: var(--main-color);
+  padding:1em;
+  color:white;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  border:3px solid var(--whitefont-footer);
+  justify-content: space-between;
+  width:100%;
+  align-items: center;
+  display: flex;
+  font-family: "Casa-bodytekst", sans-serif;
+  font-weight: 900;
+  font-size: 1.1em;
+}
+
+main > section:nth-of-type(4) > button::after {
+  content: ">";
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+
+/* ////////////////////////////////////////
+        MEDIA INQUERIE
+/////////////////////////////////////// */
+
+@media (min-width: 600px) {
+  section:nth-of-type(3) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  section:nth-of-type(3) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ////////////////////////////////////////
+        DETAILS & SUMMARY
+/////////////////////////////////////// */
+
+
+
+summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Casa-bodytekst", sans-serif;
+  font-weight:bold;
+  color: var(--fontlightbackground-color);
+  padding:0.7em;
+  justify-content: space-between;
+  background-color: var(--fontdarkbackground-color);
+}
+
+summary:focus-visible {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 2px;
+}
+
+details > summary > svg {
+  transform: rotate(0deg);
+  transition-duration: 1s;
+  width:30px !important;
+  height:auto!important;
+  margin-left: 1em;
+}
+
+details[open] > summary svg {
+  transform: rotate(90deg);
+  transition-duration: 1s;
+}
+
+
+details[open] p {
+  animation-name:uitklapDetails;
+  animation-duration: 1s;
+  transform-origin: top;
+  padding:0.7em;
+}
+
+details{
+  margin:0em 2em;
+}
+
+@keyframes uitklapDetails {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* @keyframes chevronDraai {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  } */
+
+
+/* ////////////////////////////////////////
+        SVG BRON:CASA
+/////////////////////////////////////// */
+
+main > section:first-of-type > div:nth-of-type(2) svg {
+  width:35px;
+  height:auto;
+}
+
+
+/* ////////////////////////////////////////
+       SLIDER
+/////////////////////////////////////// */
+
+main > section:nth-of-type(2) img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+main > section:nth-of-type(2){
+  max-width: 1000px;
+  position: relative;
+  overflow: hidden;
+  height: 50vw; 
+  background-color: white; 
+}
+
+main > section:nth-of-type(2) div {
+  max-width: 100%;
+  position: relative;
+}
+
+main > section:nth-of-type(2) > div {
+  position: absolute;
+  transform: translateX(100%); 
+  transition: transform 1s ease-in-out;
+}
+
+main > section:nth-of-type(2) > div.active {
+  transform: translateX(0); 
+  z-index: 2; 
+}
+
+main > section:nth-of-type(2) > div.previous {
+  transform: translateX(-100%); 
+  z-index: 1; 
+}
+
+
+main > section:first-of-type{
+  display: flex;
+}
+
+main > p:first-of-type {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+main > p:nth-of-type(3) {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+main > p:nth-of-type(2){
+  font-weight: bolder;
+  margin-top: 0;
+}
+main > p:nth-of-type(4){
+  margin-top: 0;
+}
+
+
+/* /////////////////////////////// */
+        /* LEES MEER HOVER */
+/* /////////////////////////////// */
+
+a > div:first-of-type:hover{
+  animation-name: spinningHover;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  transform-origin: center; 
+}
+
+@keyframes spinningHover {
+  0% {
+    transform: rotate(0deg) scale(1); /* Begin met standaard schaal */
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5); /* Schaal naar 1.5 en voltooi rotatie */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* Schaal naar 1.5 en voltooi rotatie */
+  }
+}
+
+
+@keyframes fadeInAndScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+main > section:nth-of-type(3) section {
+  opacity: 0;
+  transform: scale(0.5);
+  visibility: hidden; 
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+main > section:nth-of-type(3) section.show {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible; 
+}

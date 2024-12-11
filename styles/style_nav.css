@@ -1,18 +1,16 @@
-
-nav button:first-of-type {
-    all: unset;
+h1 {
+  color: white;
+  font-size: calc(16px + 2 * ((100vw - 600px) / 440));
 }
 
-h1{
-
-   color:white;
-   font-size: calc(16px + 2 * ((100vw - 600px) / 440));
-   
+header nav ul li ul li a:focus-visible {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 2px;
 }
-  
 
-header > nav.open {
-   translate:0;
+header nav ul li a:focus-visible {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 4px;
 }
 
 header > nav ul {
@@ -20,33 +18,48 @@ header > nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #ff005d;
+  background-color: var(--main-color);
   margin: 0;
   padding: 10px 0;
+  position: relative;
+  z-index: 10;
 }
 
-/* Styling voor de hoofditems in de navigatiebalk */
 header > nav ul > li {
-
   color: white;
   font-family: "Casa-bodytekst", sans-serif;
   font-weight: bold;
   cursor: pointer;
   list-style: none;
   text-transform: uppercase;
+  padding: 10px 0px;
 }
 
-header > nav ul > li > a{
-    text-decoration:none;
-    color:white;
-    font-family: sans-serif;
-    font-weight: lighter;
-    list-style: none;
-    cursor: pointer;
-    position: relative;
+header > nav ul > li li:nth-last-of-type(2) {
+  background-color: var(--main-color);
+  
+}
+
+header > nav ul > li > a {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: lighter;
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+header > nav ul > li ul > li:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+header > nav ul > li ul > li:hover a{
+color: white;
   }
 
-header > nav ul > li:nth-of-type(4) > ul {
+header > nav ul > li ul {
   display: none;
   position: absolute;
   top: 100%;
@@ -55,11 +68,128 @@ header > nav ul > li:nth-of-type(4) > ul {
   padding: 10px 0;
   list-style: none;
   width: 100vw;
-  z-index: 10;
+  animation: uitklapMenu 500ms ease-in-out forwards;
+  transform-origin:top;
 }
 
 header > nav ul > li:nth-of-type(4) > ul.show {
-    display: block;
+  display: block;
+}
+
+header > nav ul > li ul > li a {
+  padding: 5px 10px;
+  color: black;
+  font-family: "nav-tekst", Arial;
+}
+
+/* ///////////////////////////
+        Button animatie 
+  /////////////////////////// */
+
+/* https://www.w3schools.com/howto/howto_css_menu_icon.asp = lesstof voor menuknop animeren */
+
+nav button:first-of-type {
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  border: none;
+}
+
+nav button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 4px;
+}
+
+
+nav button:first-of-type::before,
+nav button:first-of-type::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: transform 0.4s, opacity 0.4s;
+  left: 0;
+}
+
+nav button:first-of-type::before {
+  top: 0;
+}
+
+nav button:first-of-type::after {
+  bottom: 0;
+}
+
+nav button:first-of-type span {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transform: translateY(-50%);
+  transition: opacity 0.4s;
+}
+
+nav button:first-of-type.active::before {
+  transform: translateY(8px) rotate(45deg);
+}
+
+nav button:first-of-type.active::after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+nav button:first-of-type.active span {
+  opacity: 0;
+}
+
+
+
+/* ///////////////////////////
+        KEYFRAMES 
+  /////////////////////////// */
+
+
+/* @keyframes uitklapMenu {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
+
+
+@keyframes uitklapMenu {
+    0% {
+      transform: rotateX(-90deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
   }
 
+  /* ///////////////////////////
+        DONKERE OVERLAY 
+  /////////////////////////// */
 
+  header > div:only-of-type {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    opacity: 0;
+    display: none;
+    z-index: -1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+header > div:only-of-type.active {
+    opacity: 0.8;
+    display:block;
+    z-index: 5;
+}

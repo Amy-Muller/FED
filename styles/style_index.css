@@ -1,0 +1,533 @@
+/* Lettertypes */
+@font-face {
+  font-family: Casa-koptekst;
+  src: url("../lettertype/CasaGothicStdv4Bold.woff");
+}
+
+@font-face {
+  font-family: Casa-bodytekst;
+  src: url("../lettertype/AntiqueOliveStd-Light.woff");
+}
+
+@font-face {
+  font-family: Nav-tekst;
+  src: url("../lettertype/Roboto");
+}
+
+/* :root {
+  color-scheme: light dark;
+
+  --header-bg: light-dark(#ace5fa, #284048); 
+--main-color: light-dark(#ff005d, #ff005d);
+  --fontlightbackground-color: light-dark(black, white); 
+--fontdarkbackground-color: light-dark(white, black);
+  --background-footer: light-dark(black, rgb(39, 39, 39));
+  --whitefont-footer: light-dark(white); 
+--light-bg-top: light-dark(#ace5fa, #284048);  
+--light-bg-bottom: light-dark(white, black); 
+ --review-pink: light-dark(#f9c2c9, #a44552);
+ --review-blue: light-dark(#71cef3, #0f4f69);
+--review-blue: light-dark(#17a74b, #16552d);
+--background-body: light-dark(white, black);
+} */
+
+body {
+  z-index: 2;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --header-bg: #ace5fa;
+  --main-color: #ff005d;
+  --fontlightbackground-color: black;
+  --fontdarkbackground-color: white;
+  --background-footer: black;
+  --whitefont-footer: white;
+  --light-bg-top: #ace5fa;
+  --light-bg-bottom: white;
+  --review-pink: #f9c2c9;
+  --review-blue: #71cef3;
+  --review-green: #17a74b;
+  --background-body: white;
+}
+
+.dark-mode {
+  --header-bg: #284048;
+  --fontlightbackground-color: white;
+  --fontdarkbackground-color: black;
+  --background-footer: rgb(39, 39, 39);
+  --light-bg-top: #284048;
+  --light-bg-bottom: black;
+  --review-pink: #a44552;
+  --review-blue: #0f4f69;
+  --review-green: #16552d;
+  --background-body: black;
+}
+
+/* ////////////////////////////////////////
+        LETTERTYPEN
+/////////////////////////////////////// */
+
+h1,
+h2,
+h3 {
+  font-family: "Casa-koptekst", Courier, monospace;
+  text-transform: uppercase;
+  color: var(--fontlightbackground-color);
+}
+
+h2 {
+  font-size: 2.5em;
+  margin: 0.5em;
+}
+
+section:first-of-type h2:first-of-type {
+  position: relative;
+  animation: slideInTekst 2s ease-out forwards;
+}
+
+footer > H2 {
+  color: var(--whitefont-footer);
+}
+
+H3 {
+  font-size: 1.5em;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  order: -1;
+}
+
+H3::after {
+  content: "";
+  height: 4px;
+  background-color: var(--fontlightbackground-color);
+  margin-left: 1em;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-family: "Casa-bodytekst", sans-serif;
+  margin: 1em 0 0 0;
+  color: var(--fontlightbackground-color);
+}
+
+p {
+  font-family: "Casa-bodytekst", sans-serif;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 1.8;
+  color: var(--fontlightbackground-color);
+}
+
+div > a > p {
+  color: var(--main-color);
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: 1em;
+  width: 120px;
+}
+
+div > a {
+  text-decoration: none;
+}
+
+/* ////////////////////////////////////////
+        HEADER
+/////////////////////////////////////// */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+header > button:last-child {
+  background-color: var(--main-color);
+  color: white;
+  font-size: 2em;
+  border: none;
+  float: right;
+  border-radius: 0 0 50% 50%;
+  animation-name: darkmodeUitschuif;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  transform-origin: top;
+}
+
+/* ////////////////////////////////////////
+        MAIN
+/////////////////////////////////////// */
+
+main > section:first-of-type > h2:first-of-type {
+  font-size: calc(40px + 40 * ((100vw - 400px) / 440));
+  margin: 1em 0em;
+}
+
+body {
+  background-color: var(--background-body);
+}
+
+body {
+  position: relative;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--header-bg) 750px,
+    var(--background-body) 0
+  );
+}
+
+main {
+  margin: 1em;
+}
+
+/* ////////////////////////////////////////
+        DIVS
+/////////////////////////////////////// */
+
+section:first-of-type div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section:nth-of-type(5) div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+a > div:first-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  height: 60px;
+  width: 60px;
+  background-color: var(--fontdarkbackground-color);
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  justify-content: center;
+  animation-name: buttonTwist;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+/* ////////////////////////////////////////
+        SECTIONS
+/////////////////////////////////////// */
+
+main > section > section > section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section:nth-of-type(4) {
+  display: flex;
+  flex-direction: column;
+}
+
+section:nth-of-type(2) > section {
+  display: flex;
+  align-items: center;
+}
+
+section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+section:nth-of-type(3) {
+  position: relative;
+  width: 100%;
+}
+
+section:nth-of-type(5) {
+  display: grid;
+  gap: 1em;
+}
+
+section:nth-of-type(5) > section {
+  display: flex;
+  flex-direction: column;
+}
+
+section:nth-of-type(6) > section {
+  margin: 1em;
+}
+/* ////////////////////////////////////////
+        IMG
+/////////////////////////////////////// */
+
+main > section:first-of-type > div:only-of-type > img:first-of-type {
+  width: 100%;
+}
+
+main > section:first-of-type > div:only-of-type > img:nth-of-type(2) {
+  display: none;
+}
+
+a > div > img {
+  width: 25px;
+  height: auto;
+  align-self: center;
+}
+
+section:nth-of-type(2) > img {
+  width: 100%;
+}
+
+section:nth-of-type(5) > section > div:first-of-type img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 7/11;
+}
+
+section:nth-of-type(7) > button > img {
+  all: unset;
+  width: 20px;
+}
+
+section:nth-of-type(6) img {
+  width: 24px;
+}
+section:nth-of-type(6) ul > img:nth-of-type(2) {
+  width: 24px;
+}
+
+/* ////////////////////////////////////////
+        LINKS
+/////////////////////////////////////// */
+
+main > div > a {
+  display: flex;
+  align-items: center;
+  margin: 0em 0.5em 2em 0em;
+}
+
+p > a {
+  all: unset;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+div > a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+/* ////////////////////////////////////////
+        UL EN LI
+/////////////////////////////////////// */
+
+main > section li {
+  flex-grow: 1;
+  color: var(--whitefont-footer);
+  font-family: "Casa-bodytekst", sans-serif;
+  font-size: calc(14px + 2 * ((100vw - 400px) / 400));
+  padding: 1em;
+}
+
+section:nth-of-type(6) li:first-child {
+  background-color: var(--review-pink);
+}
+
+section:nth-of-type(6) li:nth-child(2) {
+  background: var(--review-blue);
+}
+
+section:nth-of-type(6) li:nth-child(3) {
+  background: var(--review-green);
+}
+
+section:nth-of-type(6) > ul {
+  display: grid;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
+}
+
+section:nth-of-type(6) p {
+  color: white;
+}
+
+section:nth-of-type(6) ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+section:nth-of-type(6) ul > li > img:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+/* ////////////////////////////////////////
+        VIDEO
+/////////////////////////////////////// */
+
+section:nth-of-type(3) iframe {
+  border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560/315;
+}
+
+iframe:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 4px;
+}
+
+/* ////////////////////////////////////////
+        BUTTON
+/////////////////////////////////////// */
+
+/* ////////////////////////////////////////
+        MEDIA DINGEN
+/////////////////////////////////////// */
+
+/* @media (prefers-color-scheme: dark) {
+  body::before {
+    background: linear-gradient(
+      to bottom,
+      var(--dark-bg-top) 650px,
+      var(--dark-bg-bottom) 200px
+    );
+  }
+} */
+
+@media (min-width: 600px) {
+  main > section:first-of-type > div:only-of-type > img:first-of-type {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 7/9;
+  }
+
+  main > section:first-of-type > div:only-of-type > img:nth-of-type(2) {
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 7/9;
+  }
+
+  section:nth-of-type(6) > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section:nth-of-type(5) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h2 {
+    font-size: calc(40px + 40 * ((100vw - 600px) / 440)); /* Grotere basis */
+  }
+
+  h3 {
+    font-size: calc(20px + 20 * ((100vw - 600px) / 440)); /* Grotere basis */
+  }
+
+  h4 {
+    font-size: calc(18px + 2 * ((100vw - 600px) / 440)); /* Grotere basis */
+  }
+
+  p {
+    font-size: calc(16px + 2 * ((100vw - 600px) / 440)); /* Grotere basis */
+  }
+}
+
+@media (min-width: 900px) {
+  section:nth-of-type(6) > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ////////////////////////////////////////
+        KEYFRAMES
+/////////////////////////////////////// */
+
+@keyframes slideInTekst {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes buttonTwist {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  5% {
+    transform: rotate(180deg);
+    scale: 1.5;
+  }
+  10% {
+    transform: rotate(360deg);
+    scale: 1;
+  }
+  100% {
+    transform: rotate(360deg);
+    scale: 1;
+  }
+}
+
+@keyframes buttonDubbelTwist {
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  2.5% {
+    transform: rotate(45deg);
+    scale: 1.1;
+  }
+  5% {
+    transform: rotate(-45deg);
+    scale: 1;
+  }
+  7.5% {
+    transform: rotate(25deg);
+    scale: 1.1;
+  }
+
+  10% {
+    transform: rotate(-25deg);
+    scale: 1;
+  }
+
+  12.5% {
+    transform: rotate(0);
+    scale: 1;
+  }
+
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+
+@keyframes darkmodeUitschuif {
+  0% {
+    height: 1.3em;
+  }
+  15% {
+    height: 2em;
+    border-radius: 0 0 0.6em 0.6em;
+  }
+  30% {
+    height: 1.5em;
+  }
+
+  45% {
+    height: 1.3em;
+  }
+  100% {
+    height: 1.3em;
+  }
+}

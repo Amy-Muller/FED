@@ -1,6 +1,18 @@
-img {
+section:nth-of-type(7) img {
     width: 100%;
   }
+
+  /* section:nth-of-type(7) button:focus {
+    outline: 2px dashed var(--main-color);
+    outline-offset: 4px;
+} */
+
+section:nth-of-type(2) button:focus-visible,
+section:nth-of-type(7) button:focus-visible,
+main > section:nth-of-type(4) > button:focus-visible {
+    outline: 2px dashed var(--main-color);
+    outline-offset: 2px;
+}
   
   section > button {
     height: 60px;
@@ -11,7 +23,12 @@ img {
     border-radius: 50%;
     justify-content: center;
     margin:1em;
-  }
+  animation-name: buttonDubbelTwist;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+
+}
 
   
   

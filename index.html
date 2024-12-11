@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casa</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/style_index.css" />
     <link rel="stylesheet" href="styles/style_nav.css" />
     <link rel="stylesheet" href="styles/style_slider.css" />
+    <link rel="stylesheet" href="styles/combined_style.css" />
   </head>
 
-  <!-- kloppen de plekken van de h2 en de h3 of moet het omgedraaid worden -->
   <body>
     <header>
+      <div></div> 
       <nav aria-label="Hoofdnavigatie">
         <ul>
           <li>
@@ -20,34 +21,36 @@
           <li><a href="#locatie">Locatie</a></li>
           <li><a href="#call">Call</a></li>
           <li>
-            <button>Menu</button>
+            <button aria-label="Open navigatiemenu">
+              <span></span>
+            </button>
             <ul>
-              <li><a href="#sleep">Sleep</a></li>
-              <li><a href="#eat">Eat</a></li>
-              <li><a href="#meet">Meet</a></li>
-              <li><a href="#studenten">Studenten</a></li>
-              <li><a href="#ons-verhaal">Ons verhaal</a></li>
-              <li><a href="#galerij">Galerij</a></li>
-              <li><a href="#event-kalender">Event kalender</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#jobs">Jobs</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#bereikbaarheid">Bereikbaarheid</a></li>
-              <li><a href="#parkeren">Parkeren</a></li>
-              <li><a href="#boek">Boek</a></li>
+              <li><a href="#">Sleep &#9662;</a></li>
+              <li><a href="east.html">Eat &#9662;</a></li>
+              <li><a href="#">Meet &#9662;</a></li>
+              <li><a href="#">Studenten &#9662;</a></li>
+              <li><a href="#">Ons verhaal</a></li>
+              <li><a href="#">Galerij</a></li>
+              <li><a href="#">Event kalender</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Jobs</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Bereikbaarheid</a></li>
+              <li><a href="#">Parkeren</a></li>
+              <li><a href="#">Boek</a></li>
+              <li><a href="#">Nl &#9662;</a></li>
             </ul>
           </li>
         </ul>
       </nav>
-      <button aria-label="licht/donker modus" onclick="myFunction()">
+      <button aria-label="Schakel licht/donker modus in" onclick="myFunction()">
         &#9775;
       </button>
     </header>
 
     <main>
-      <section aria-label="Introductie tot Casa">
-        <!-- section:first-of-type -->
-        <h2>Vier het studentenleven!</h2>
+      <section aria-labelledby="introductie">
+        <h2 id="introductie">Vier het studentenleven!</h2>
         <p>
           Begin je nieuwe hoofdstuk bij Casa. Een plek waar vrijheid begint en
           dromers, creatievelingen, feestgangers en tortelduifjes hun weg
@@ -59,8 +62,8 @@
           schrijf je in!
         </p>
         <p>
-          <strong>Let op!</strong> Na je inschrijving op de wachtlijst duurt het
-          ongeveer <strong>2 jaar</strong> voor een kamer in Casa.
+          Let op! Na je inschrijving op de wachtlijst duurt het
+          ongeveer 2 jaar voor een kamer in Casa.
         </p>
         <div>
           <img
@@ -72,18 +75,16 @@
             alt="Een gezellige activiteit met studenten in Casa"
           />
         </div>
-        <!-- gekozen voor een div om mijn img te kunnen flexboxen -->
         <section>
           <p>
             Al meer dan 66 jaar een thuis voor hotelgasten, studenten en locals.
           </p>
-
           <div>
-            <a href="x" title="Knop naar verhaal Casa hotel">
+            <a href="x" aria-label="Lees meer over het verhaal van Casa hotel">
               <div>
                 <img
-                  src="images/chevron_roze.png"
-                  alt="Knop naar het verhaal van Casa"
+                  src="images/chevron_roze_rechts.png"
+                  alt=""
                 />
               </div>
               <p>Lees ons verhaal</p>
@@ -93,7 +94,6 @@
       </section>
 
       <section>
-        <!-- section:nth-of-type(2) -->
         <h2>Wonen in Casa</h2>
         <h3>Kamers</h3>
 
@@ -107,11 +107,11 @@
         </p>
 
         <div>
-          <a href="x" title="Knop naar kamers van Casa">
+          <a href="x" aria-label="Meer informatie over de kamers van Casa">
             <div>
               <img
-                src="images/chevron_roze.png"
-                alt="Knop naar de kamers van Casa"
+                src="images/chevron_roze_rechts.png"
+                alt=""
               />
             </div>
             <p>Check onze kamers</p>
@@ -120,11 +120,10 @@
       </section>
 
       <section>
-        <!-- section:nth-of-type(3) -->
         <h3>Goodbye party 2022</h3>
         <iframe
           src="https://www.youtube.com/embed/P9dNjExv88E?si=EtCplH0biuecbeld"
-          title="YouTube video player"
+          title="Goodbye party 2022 op YouTube"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
@@ -132,94 +131,107 @@
       </section>
 
       <section>
-        <!-- section:nth-of-type(4) -->
         <h2>Leer onze studenten kennen</h2>
         <h3>Studenten</h3>
-        <div>
-          <img
-            src="images/student_wick.png"
-            alt="Portret van student Wick, een nieuwe Casa Student"
-          />
-          <h4>Wick</h4>
-          <p>
-            Deze editie delen we het verhaal van Wick, een van onze nieuwe Casa
-            Studenten.
-          </p>
-        </div>
-
-        <div>
-          <a href="x" title="Knop naar verhaal Wick">
-            <div>
-              <img
-                src="images/chevron_roze.png"
-                alt="Knop naar het verhaal van Wick"
-              />
-            </div>
-            <p>Lees meer</p>
-          </a>
-        </div>
       </section>
 
       <section>
-        <!-- section:nth-of-type(4) -->
-        <div>
-          <img
-            src="images/student_maya.png"
-            alt="Portret van student Maya, een Buddy bij Casa"
-          />
-          <h4>Maya</h4>
-          <p>
-            Maya is een van onze Buddies bij Casa. Lees hoe zij het vindt om
-            hier te wonen!
-          </p>
-        </div>
+        <section>
+          <div>
+            <img
+              src="images/student_wick.png"
+              alt="Portret van student Wick, een nieuwe Casa Student"
+            />
+            <h4>Wick</h4>
+            <p>
+              Deze editie delen we het verhaal van Wick, een van onze nieuwe
+              Casa Studenten.
+            </p>
+          </div>
 
-        <div>
-          <a href="x" title="Knop naar verhaal Maya">
-            <div>
-              <img
-                src="images/chevron_roze.png"
-                alt="Knop naar het verhaal van Maya"
-              />
-            </div>
-            <p>Lees meer</p>
-          </a>
-        </div>
+          <div>
+            <a href="x" aria-label="Lees meer over Wick">
+              <div>
+                <img
+                  src="images/chevron_roze_rechts.png"
+                  alt=""
+                />
+              </div>
+              <p>Lees meer</p>
+            </a>
+          </div>
+        </section>
+
+        <section>
+          <div>
+            <img
+              src="images/student_maya.png"
+              alt="Portret van student Maya, een Buddy bij Casa"
+            />
+            <h4>Maya</h4>
+            <p>
+              Maya is een van onze Buddies bij Casa. Lees hoe zij het vindt om
+              hier te wonen!
+            </p>
+          </div>
+
+          <div>
+            <a href="x" aria-label="Lees meer over Maya">
+              <div>
+                <img
+                  src="images/chevron_roze_rechts.png"
+                  alt=""
+                />
+              </div>
+              <p>Lees meer</p>
+            </a>
+          </div>
+        </section>
       </section>
 
       <section>
-        <!-- section:nth-of-type(5) -->
         <h3>Studentreviews</h3>
         <ul>
           <li>
-            Casa is vol met geweldige studenten die graag meedoen met toffe
-            events. Ik vind het ook leuk dat je makkelijk andere studenten
-            ontmoet in de studentenlounge.
+            <img src="images/quote_left.png" alt="" aria-hidden="true" />
+            <p>
+              Casa is vol met geweldige studenten die graag meedoen met toffe
+              events. Ik vind het ook leuk dat je makkelijk andere studenten
+              ontmoet in de studentenlounge.
+            </p>
+            <img src="images/quote_right.png" alt="" aria-hidden="true" />
           </li>
           <li>
-            Alles is top bij Casa. De activiteiten met de andere studenten, de
-            mooie kamer, m’n huisgenoten en ook het personeel van het hotel
-            zelf.
+            <img src="images/quote_left.png" alt="" aria-hidden="true" />
+            <p>
+              Alles is top bij Casa. De activiteiten met de andere studenten, de
+              mooie kamer, m’n huisgenoten en ook het personeel van het hotel
+              zelf.
+            </p>
+            <img src="images/quote_right.png" alt="" aria-hidden="true" />
           </li>
           <li>
-            Ik vind het communitygevoel heel fijn en dat ik nieuwe vrienden heb
-            gemaakt doordat ik hier woon. En daarbij is het ook nice dat ik m’n
-            eigen kamer én badkamer heb.
+            <img src="images/quote_left.png" alt="" aria-hidden="true" />
+            <p>
+              Ik vind het communitygevoel heel fijn en dat ik nieuwe vrienden heb
+              gemaakt doordat ik hier woon. En daarbij is het ook nice dat ik
+              m’n eigen kamer én badkamer heb.
+            </p>
+            <img src="images/quote_right.png" alt="" aria-hidden="true" />
           </li>
         </ul>
       </section>
 
-      <section>
-        <!-- section:nth-of-type(6) -->
-        <h3>Proef de sfeer</h3>
+      <section aria-labelledby="sfeerproef">
+        <h3 id="sfeerproef">Proef de sfeer</h3>
         <div>
-          <img src="images/djbooth_casa.png" alt="shotjes bij casa" />
+          <img src="images/djbooth_casa.png" alt="DJ Booth bij Casa" />
         </div>
-        <button onclick="prev()">
-          <img src="images/chevron_roze.png" alt="Knop naar volgende foto" />
+        <button onclick="prev()" aria-label="Vorige foto">
+          <img src="images/chevron_roze_links.png" alt="" />
         </button>
-        <button onclick="next()">
-          <img src="images/chevron_roze.png" alt="Knop naar volgende foto" />
+        <button onclick="next()" aria-label="Volgende foto">
+          <img src="images/chevron_roze_rechts.png" alt="" />
         </button>
       </section>
     </main>
@@ -230,15 +242,14 @@
         <p>Newsletter</p>
         <form>
           <section>
-            <input type="email" placeholder="Your emailaddress" required />
-            <input type="submit" value="SIGN UP" />
+            <input type="email" placeholder="Your emailaddress" required aria-label="E-mailadres invoeren" />
+            <input type="submit" value="SIGN UP" aria-label="Inschrijven voor de nieuwsbrief" />
           </section>
           <section>
             <label><input type="checkbox" /> Hotel Offers</label>
             <label><input type="checkbox" /> Food & Events</label>
             <label><input type="checkbox" /> Meetings</label>
           </section>
-          <!-- hoe moet ik die checkbox stylen/aanroepen? -->
         </form>
       </section>
 
@@ -276,7 +287,6 @@
         </nav>
       </section>
       <section>
-        <!-- WAAROM BLIJFT DIE 2e NAV BEWEGEN -->
         <nav>
           <a href="#">Hotel Amstel Station</a>
           <a href="#">Hotel Amsterdam Arena</a>
@@ -290,11 +300,13 @@
           <a href="#">Rolstoelvriendelijk Hotel Amsterdam</a>
         </nav>
       </section>
-      <section></section>
     </footer>
     <script src="scripts/script.js"></script>
   </body>
 </html>
 
-<!-- < 2- Waarom word de img van de lees-meer link niet 3- Waarom zie ik geen -->
-<!-- pijltjes op mn knoppen? 5- waarom doet mn footer zo kapot raar. -->
+
+
+<!-- div z-index fixen nu is niks klikbaar 
+:focus toevoegen
+spraaklezer testen -->
