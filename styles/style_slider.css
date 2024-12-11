@@ -2,11 +2,6 @@ section:nth-of-type(7) img {
     width: 100%;
   }
 
-  /* section:nth-of-type(7) button:focus {
-    outline: 2px dashed var(--main-color);
-    outline-offset: 4px;
-} */
-
 section:nth-of-type(2) button:focus-visible,
 section:nth-of-type(7) button:focus-visible,
 main > section:nth-of-type(4) > button:focus-visible {
@@ -27,15 +22,26 @@ main > section:nth-of-type(4) > button:focus-visible {
   animation-duration: 7s;
   animation-timing-function: ease-in-out;
   animation-iteration-count:infinite;
-
 }
 
-  
-  
   section > button:hover {
     background: #111;
   }
 
   section > button > img {
     width:25px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    section > button {
+      animation: none !important;
+    }
+  }
+
+  @media (prefers-contrast: high) {
+    section > button {
+      border: 3px solid var(--main-color);
+      color: var(--fontlightbackground-color);
+      background-color: var(--header-bg);
+    }
   }

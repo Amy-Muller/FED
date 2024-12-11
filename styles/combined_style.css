@@ -541,5 +541,36 @@ input[type="checkbox" i]:checked::after {
     }
   }
   
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  
+    @keyframes darkmodeUitschuif {
+      from {
+        height: 1.3em;
+      }
+      to {
+        height: 1.3em;
+      }
+    }
+  }
+
+  @media (prefers-contrast: high) {
+    h1, h2, h3, h4, p {
+      color: var(--fontlightbackground-color);
+      background-color: var(--header-bg);
+      padding: 0.2em;
+      border-radius: 0.2em;
+    }
+  
+    button {
+      border: 2px solid var(--main-color);
+      color: var(--fontlightbackground-color);
+      background-color: var(--header-bg);
+    }
+  }
   
   

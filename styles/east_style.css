@@ -20,7 +20,7 @@ main > section:first-of-type a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color:var(--fontlightbackground-color);
+  color: var(--fontlightbackground-color);
   font-family: "Casa-bodytekst", sans-serif;
   font-weight: bold;
   margin: 1em;
@@ -41,14 +41,14 @@ main > section:first-of-type a svg {
   padding: 0;
 }
 
-main > section:first-of-type > div:first-of-type{
-display:flex;
-gap:2em;
+main > section:first-of-type > div:first-of-type {
+  display: flex;
+  gap: 2em;
 }
 
-main > section:first-of-type > div:nth-of-type(2){
-  display:flex;
-  }
+main > section:first-of-type > div:nth-of-type(2) {
+  display: flex;
+}
 
 main > section:nth-of-type(3) > section > img {
   width: 100%;
@@ -59,7 +59,7 @@ main > section:nth-of-type(3) > section > img {
 
 main > section:nth-of-type(3) {
   display: grid;
-  gap:1em;
+  gap: 1em;
   margin: 4em;
 }
 
@@ -74,16 +74,16 @@ main > section:nth-of-type(4) {
   padding: 3em 1.5em;
 }
 
-main > section:nth-of-type(5){
-  padding:1em;
-}
-  
-summary img{
-  width:25px;
+main > section:nth-of-type(5) {
+  padding: 1em;
 }
 
-main> section:nth-of-type(4) > p:first-of-type{
-max-width: 200px;
+summary img {
+  width: 25px;
+}
+
+main > section:nth-of-type(4) > p:first-of-type {
+  max-width: 200px;
 }
 
 /* ////////////////////////////////////////
@@ -92,11 +92,11 @@ max-width: 200px;
 
 main > section:nth-of-type(4) > button {
   background-color: var(--grey-background);
-  padding:1em;
+  padding: 1em;
   cursor: pointer;
-  border:3px solid var(--fontlightbackground-color);
+  border: 3px solid var(--fontlightbackground-color);
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   color: var(--fontlightbackground-color);
   align-items: center;
   display: flex;
@@ -107,13 +107,13 @@ main > section:nth-of-type(4) > button {
 
 main > section:nth-of-type(4) > button:hover {
   background-color: var(--main-color);
-  padding:1em;
-  color:white;
+  padding: 1em;
+  color: white;
   transition: 0.2s ease-in;
   cursor: pointer;
-  border:3px solid var(--whitefont-footer);
+  border: 3px solid var(--whitefont-footer);
   justify-content: space-between;
-  width:100%;
+  width: 100%;
   align-items: center;
   display: flex;
   font-family: "Casa-bodytekst", sans-serif;
@@ -143,20 +143,34 @@ main > section:nth-of-type(4) > button::after {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  header > button:last-child {
+    animation: none;
+  }
+
+  a > div:first-of-type {
+    animation: none;
+  }
+}
+
 /* ////////////////////////////////////////
         DETAILS & SUMMARY
 /////////////////////////////////////// */
-
-
 
 summary {
   display: flex;
   align-items: center;
   cursor: pointer;
   font-family: "Casa-bodytekst", sans-serif;
-  font-weight:bold;
+  font-weight: bold;
   color: var(--fontlightbackground-color);
-  padding:0.7em;
+  padding: 0.7em;
   justify-content: space-between;
   background-color: var(--fontdarkbackground-color);
 }
@@ -166,12 +180,28 @@ summary:focus-visible {
   outline-offset: 2px;
 }
 
-details > summary > svg {
+/* details > summary > svg {
   transform: rotate(0deg);
   transition-duration: 1s;
   width:30px !important;
   height:auto!important;
   margin-left: 1em;
+} */
+
+details > summary > span svg {
+  transform: rotate(0deg);
+  transition-duration: 1s;
+  width: 1em;
+  margin-left: 1em;
+  transition: 0.5s;
+  display: block;
+}
+
+details > summary > span {
+  margin-left: 10px;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
 }
 
 details[open] > summary svg {
@@ -179,16 +209,15 @@ details[open] > summary svg {
   transition-duration: 1s;
 }
 
-
 details[open] p {
-  animation-name:uitklapDetails;
+  animation-name: uitklapDetails;
   animation-duration: 1s;
   transform-origin: top;
-  padding:0.7em;
+  padding: 0.7em;
 }
 
-details{
-  margin:0em 2em;
+details {
+  margin: 0em 2em;
 }
 
 @keyframes uitklapDetails {
@@ -208,34 +237,32 @@ details{
     transform: rotate(90deg);
   } */
 
-
 /* ////////////////////////////////////////
         SVG BRON:CASA
 /////////////////////////////////////// */
 
 main > section:first-of-type > div:nth-of-type(2) svg {
-  width:35px;
-  height:auto;
+  width: 35px;
+  height: auto;
 }
-
 
 /* ////////////////////////////////////////
        SLIDER
 /////////////////////////////////////// */
 
-main > section:nth-of-type(2) img{
+main > section:nth-of-type(2) img {
   width: 100%;
   height: auto;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
 
-main > section:nth-of-type(2){
+main > section:nth-of-type(2) {
   max-width: 1000px;
   position: relative;
   overflow: hidden;
-  height: 50vw; 
-  background-color: white; 
+  height: 50vw;
+  background-color: white;
 }
 
 main > section:nth-of-type(2) div {
@@ -245,22 +272,21 @@ main > section:nth-of-type(2) div {
 
 main > section:nth-of-type(2) > div {
   position: absolute;
-  transform: translateX(100%); 
+  transform: translateX(100%);
   transition: transform 1s ease-in-out;
 }
 
 main > section:nth-of-type(2) > div.active {
-  transform: translateX(0); 
-  z-index: 2; 
+  transform: translateX(0);
+  z-index: 2;
 }
 
 main > section:nth-of-type(2) > div.previous {
-  transform: translateX(-100%); 
-  z-index: 1; 
+  transform: translateX(-100%);
+  z-index: 1;
 }
 
-
-main > section:first-of-type{
+main > section:first-of-type {
   display: flex;
 }
 
@@ -274,24 +300,23 @@ main > p:nth-of-type(3) {
   margin-bottom: 0;
 }
 
-main > p:nth-of-type(2){
+main > p:nth-of-type(2) {
   font-weight: bolder;
   margin-top: 0;
 }
-main > p:nth-of-type(4){
+main > p:nth-of-type(4) {
   margin-top: 0;
 }
 
-
 /* /////////////////////////////// */
-        /* LEES MEER HOVER */
+/* LEES MEER HOVER */
 /* /////////////////////////////// */
 
-a > div:first-of-type:hover{
+a > div:first-of-type:hover {
   animation-name: spinningHover;
   animation-duration: 1s;
   animation-timing-function: linear;
-  transform-origin: center; 
+  transform-origin: center;
 }
 
 @keyframes spinningHover {
@@ -306,7 +331,6 @@ a > div:first-of-type:hover{
   }
 }
 
-
 @keyframes fadeInAndScale {
   0% {
     opacity: 0;
@@ -318,17 +342,15 @@ a > div:first-of-type:hover{
   }
 }
 
-
 main > section:nth-of-type(3) section {
   opacity: 0;
   transform: scale(0.5);
-  visibility: hidden; 
+  visibility: hidden;
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
-
 
 main > section:nth-of-type(3) section.show {
   opacity: 1;
   transform: scale(1);
-  visibility: visible; 
+  visibility: visible;
 }

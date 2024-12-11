@@ -446,6 +446,65 @@ iframe:focus-visible {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *:not(nav ul li ul) {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  header > button:last-child {
+    animation: none;
+  }
+
+  a > div:first-of-type {
+    animation: none;
+  }
+}
+
+/* Dit werkt niet, meer hierover staat in mn READ.ME
+@media (prefers-contrast: high) {
+  :root {
+    --header-bg: black;
+    --main-color: yellow;
+    --fontlightbackground-color: white;
+    --fontdarkbackground-color: black;
+    --background-footer: black;
+    --whitefont-footer: white;
+    --background-body: black;
+  }
+
+  body {
+    background-color: var(--background-body);
+    color: var(--fontlightbackground-color);
+  }
+
+  header,
+  footer {
+    background-color: var(--header-bg);
+  }
+
+  a {
+    color: var(--main-color);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  button,
+  input {
+    border: 2px solid var(--main-color);
+    background-color: var(--header-bg);
+    color: var(--fontlightbackground-color);
+  }
+
+  img {
+    filter: brightness(1.2) contrast(1.5);
+  }
+} */
+
 /* ////////////////////////////////////////
         KEYFRAMES
 /////////////////////////////////////// */

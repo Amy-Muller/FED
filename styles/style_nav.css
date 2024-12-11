@@ -72,7 +72,7 @@ header > nav ul > li ul {
   transform-origin:top;
 }
 
-header > nav ul > li:nth-of-type(4) > ul.show {
+header > nav ul > li:nth-of-type(5) > ul.show {
   display: block;
 }
 
@@ -81,6 +81,24 @@ header > nav ul > li ul > li a {
   color: black;
   font-family: "nav-tekst", Arial;
 }
+
+nav > ul > li:nth-of-type(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  z-index: 100;
+  text-decoration: none;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+nav > ul > li:nth-of-type(4):focus {
+  transform: translateY(0);
+}
+
 
 /* ///////////////////////////
         Button animatie 
