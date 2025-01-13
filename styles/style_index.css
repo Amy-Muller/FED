@@ -1,0 +1,312 @@
+/*////////////////////////////////
+           LETTERTYPEN
+//////////////////////////////////*/
+
+@font-face {
+  font-family: Casa-koptekst;
+  src: url("../lettertype/CasaGothicStdv4Bold.woff");
+}
+
+@font-face {
+  font-family: Casa-bodytekst;
+  src: url("../lettertype/AntiqueOliveStd-Light.woff");
+}
+
+@font-face {
+  font-family: Nav-tekst;
+  src: url("../lettertype/Roboto");
+}
+
+/*////////////////////////////////
+              KLEUREN
+  //////////////////////////////////*/
+
+:root {
+  color-scheme: light dark;
+
+  --header-bg: #ace5fa;
+  --main-color: #ff005d;
+  --fontlightbackground-color: black;
+  --fontdarkbackground-color: white;
+  --background-footer: black;
+  --whitefont-footer: white;
+  --light-bg-top: #ace5fa;
+  --light-bg-bottom: white;
+  --review-pink: #f9c2c9;
+  --review-blue: #71cef3;
+  --review-green: #17a74b;
+  --background-body: white;
+  --yellow-background: #e6d69c;
+  --grey-background: #bfc4b4;
+}
+
+.dark-mode {
+  --header-bg: #284048;
+  --fontlightbackground-color: white;
+  --fontdarkbackground-color: black;
+  --background-footer: rgb(39, 39, 39);
+  --light-bg-top: #284048;
+  --light-bg-bottom: black;
+  --review-pink: #a44552;
+  --review-blue: #0f4f69;
+  --review-green: #16552d;
+  --background-body: black;
+  --yellow-background: #3d3414;
+  --grey-background: #41433d;
+}
+
+/* ///////////////////////////
+             MAIN 
+  /////////////////////////// */
+
+h1 {
+  color: white;
+  font-size: calc(16px + 2 * ((100vw - 600px) / 440));
+}
+
+@media (min-width:600px) {
+  h2 {
+    font-size: calc(40px + 40 * ((100vw - 600px) / 440));
+  }}
+
+main > section:first-of-type > h2:first-of-type {
+  font-size: calc(40px + 40 * ((100vw - 400px) / 440));
+  margin: 1em 0em;
+}
+
+body {
+  background-color: var(--background-body);
+}
+
+body {
+  position: relative;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--header-bg) 750px,
+    var(--background-body) 0
+  );
+}
+
+main {
+  margin: 1em;
+}
+
+/* section:first-of-type */
+
+section:first-of-type div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+  main > section:first-of-type > div:only-of-type > img:first-of-type {
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 7/9;
+  }
+
+  main > section:first-of-type > div:only-of-type > img:nth-of-type(2) {
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 7/9;
+  }
+}
+
+/* section:nth-of-type(2) */
+
+main > section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* section:nth-of-type(3) */
+
+section:nth-of-type(3) video{
+  border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560/315;
+}
+
+video:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 4px;
+}
+section:nth-of-type(3) div {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+    gap: 0.5em;
+}
+section:nth-of-type(3) label {
+  display: flex;
+  align-items: center; 
+    gap: 0.5em;
+    font-family: "Casa-bodytekst", sans-serif;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #ddd;
+  border-radius: 20px;
+padding: 0.8em 0.4em;
+;}
+
+section:nth-of-type(3) button {
+  background-color: var(--main-color);
+  color: var(--whitefont-footer);
+  border: none;
+  padding:1em;
+  border-radius: 5px;
+  font-family: "Casa-bodytekst", sans-serif;
+}
+
+
+/* section:nth-of-type(4) */
+main > section:nth-of-type(4) {
+  display: grid;
+  gap: 1em;
+}
+
+main > section:nth-of-type(4) > h2,
+main > section:nth-of-type(4) > h3 {
+  grid-column: 1 / -1;
+}
+
+@media (min-width: 600px) {
+  main > section:nth-of-type(4) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* section:nth-of-type(5) */
+
+main > section li {
+  flex-grow: 1;
+  color: var(--whitefont-footer);
+  font-family: "Casa-bodytekst", sans-serif;
+  font-size: calc(14px + 2 * ((100vw - 400px) / 400));
+  padding: 1em;
+}
+
+section:nth-of-type(5) img {
+  width: 24px;
+}
+
+section:nth-of-type(5) ul > li > img:nth-of-type(2) {
+  align-self: flex-end;
+}
+
+section:nth-of-type(5) > ul {
+  display: grid;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
+}
+
+section:nth-of-type(5) ul > li {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 600px) {
+  main > section:nth-of-type(5) ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  main > section:nth-of-type(5) > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section:nth-of-type(5) li:first-child {
+  background-color: var(--review-pink);
+}
+
+section:nth-of-type(5) li:nth-child(2) {
+  background: var(--review-blue);
+}
+
+section:nth-of-type(5) li:nth-child(3) {
+  background: var(--review-green);
+}
+
+section:nth-of-type(5) p {
+  color: white;
+}
+
+/* section:nth-of-type(6) */
+
+section:nth-of-type(6) img {
+    width: 100%;
+  }
+
+  section:nth-of-type(2) button:focus-visible,
+  section:nth-of-type(7) button:focus-visible,
+  main > section:nth-of-type(4) > button:focus-visible {
+      outline: 2px dashed var(--main-color);
+      outline-offset: 2px;
+  }
+
+ section > button {
+    height: 60px;
+    width: 60px;
+    background-color: var(--fontdarkbackground-color);
+    color: var(--main-color);
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+    padding:10px;
+    justify-content: center;
+    margin:1em;
+  animation-name: buttonDubbelTwist;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count:infinite;
+}
+
+@keyframes buttonDubbelTwist {
+    0% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+    2.5% {
+      transform: rotate(45deg);
+      scale: 1.1;
+    }
+    5% {
+      transform: rotate(-45deg);
+      scale: 1;
+    }
+    7.5% {
+      transform: rotate(25deg);
+      scale: 1.1;
+    }
+  
+    10% {
+      transform: rotate(-25deg);
+      scale: 1;
+    }
+  
+    12.5% {
+      transform: rotate(0);
+      scale: 1;
+    }
+  
+    100% {
+      transform: rotate(0);
+      scale: 1;
+    }
+  }
+
+section > button:hover {
+    background: #111;
+  }
