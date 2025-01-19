@@ -14,30 +14,43 @@
       <nav aria-label="Hoofdnavigatie">
         <ul>
           <li>
-            <a href="#Home"><h1>Casa</h1></a>
+            <a href="index.html"><h1>Casa</h1></a>
           </li>
-          <li><a href="#locatie">Locatie</a></li>
-          <li><a href="#call">Call</a></li>
-          <li><a href="schrijf_in">Lees meer over de inschrijfprocedure</a></li>
+          <li>
+            <a href="https://maps.app.goo.gl/s7qi8jUsTshT7pGN6">Locatie</a>
+          </li>
+          <li><a href="tel:+31206651171">Call</a></li>
+          <li>
+            <a href="#schrijf_in">Lees meer over de inschrijfprocedure</a>
+          </li>
           <li>
             <button aria-label="Open navigatiemenu">
               <span></span>
             </button>
             <ul>
-              <li><a href="#">Sleep &#9662;</a></li>
-              <li><a href="east.html">Eat &#9662;</a></li>
-              <li><a href="#">Meet &#9662;</a></li>
-              <li><a href="#">Studenten &#9662;</a></li>
+              <li><a href="#">Sleep</a></li>
+              <li><a href="east.html">Eat</a></li>
+              <li><a href="#">Meet</a></li>
+              <li><a href="#">Studenten</a></li>
               <li><a href="#">Ons verhaal</a></li>
               <li><a href="#">Galerij</a></li>
               <li><a href="#">Event kalender</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Jobs</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li>
+                <a href="#"
+                  ><abbr title="Frequently asked questions">FAQ</abbr></a
+                >
+              </li>
               <li><a href="#">Bereikbaarheid</a></li>
               <li><a href="#">Parkeren</a></li>
               <li><a href="#">Boek</a></li>
-              <li><a href="#">Nl &#9662;</a></li>
+              <li>
+                <select>
+                  <option>NL</option>
+                  <option>EN</option>
+                </select>
+              </li>
             </ul>
           </li>
         </ul>
@@ -81,7 +94,7 @@
         </a>
       </section>
 
-      <section>
+      <section id="schrijf_in">
         <h2>Wonen in Casa</h2>
         <h3>Kamers</h3>
         <img
@@ -92,11 +105,7 @@
           Ieder jaar kun je tussen oktober en mei naar Casa verhuizen,
           afhankelijk van de beschikbaarheid.
         </p>
-        <a
-          href="x"
-          aria-label="Meer informatie over de kamers van Casa"
-          id="schrijf_in"
-        >
+        <a href="x" aria-label="Meer informatie over de kamers van Casa">
           <img src="images/chevron_roze_rechts.png" alt="" />
           <p>Check de kamers</p>
         </a>
@@ -104,24 +113,23 @@
 
       <section>
         <h3>Goodbye party 2022</h3>
-        <video
-          src="video/aftermovie.mp4"
-        ></video>
+        <video><source src="/video/aftermovie.mp4" type="video/mp4" /></video>
         <div>
-        <button>Play/Pauze</button>
-        <label>
-        Volume:
-          <input type="range" min="0" max="1" step="0.01" value="0.5">
-        </label>
-        <button>Geluid uit</button>
-      </div>
+          <button>Play/Pauze</button>
+          <label>
+            Volume:
+            <input type="range" min="0" max="1" step="0.01" value="0.5" />
+          </label>
+          <button>Geluid uit</button>
+        </div>
       </section>
 
       <section>
         <h2>Leer onze studenten kennen</h2>
         <h3>Studenten</h3>
 
-        <div>
+        <!-- U gaf aan dat ik hier wel een div mocht gebruiken -->
+        <div> 
           <img
             src="images/student_wick.png"
             alt="Portret van student Wick, een nieuwe Casa Student"
@@ -227,39 +235,57 @@
         1097 BC, Amsterdam<br />
         info@hotelcasa.nl
       </p>
-      <div>
-        <a href="#"><img src="images/instagram-icon.png" alt="Instagram" /></a>
-        <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
-        <a href="#"><img src="images/linkeding-icon.png" alt="LinkedIn" /></a>
-      </div>
 
       <nav>
-        <a href="#">Ons Verhaal</a>
-        <a href="#">Kamers</a>
-        <a href="#">Vergaderingen</a>
-        <a href="#">EAST</a>
-        <a href="#">GAPP</a>
-        <a href="#">Locatie</a>
-        <a href="#">Parkeren</a>
-        <a href="#">Studenten</a>
-        <a href="#">Blog</a>
-        <a href="#">Social Responsibility</a>
-        <a href="#">House Rules</a>
-        <a href="#">Privacy</a>
-        <a href="#">Werken bij</a>
-        <a href="#">FAQ</a>
-      </nav>
-      <nav>
-        <a href="#">Hotel Amstel Station</a>
-        <a href="#">Hotel Amsterdam Arena</a>
-        <a href="#">Hotel Amsterdam Oost</a>
-        <a href="#">Hotel bij Ziggo Dome</a>
-        <a href="#">Flexwerken Amsterdam Oost</a>
-        <a href="#">Meeting Room Amsterdam</a>
-        <a href="#">Groepsdiner Amsterdam</a>
-        <a href="#">Borrelen Amsterdam Oost</a>
-        <a href="#">LGBTQIA+ Vriendelijk Hotel Amsterdam</a>
-        <a href="#">Rolstoelvriendelijk Hotel Amsterdam</a>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/hotelcasa_amsterdam/?hl=en"
+              ><img src="images/instagram-icon.png" alt="Instagram"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/HotelCasaAmsterdam/"
+              ><img src="images/facebook-icon.png" alt="Facebook"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/hotel-casa/"
+              ><img src="images/linkeding-icon.png" alt="LinkedIn"
+            /></a>
+          </li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Ons Verhaal</a></li>
+          <li><a href="#">Kamers</a></li>
+          <li><a href="#">Vergaderingen</a></li>
+          <li><a href="#">EAST</a></li>
+          <li><a href="#">GAPP</a></li>
+          <li><a href="#">Locatie</a></li>
+          <li><a href="#">Parkeren</a></li>
+          <li><a href="#">Studenten</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Social Responsibility</a></li>
+          <li><a href="#">House Rules</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Werken bij</a></li>
+          <li>
+            <a href="#"><abbr title="Frequently asked questions">FAQ</abbr></a>
+          </li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Hotel Amstel Station</a></li>
+          <li><a href="#">Hotel Amsterdam Arena</a></li>
+          <li><a href="#">Hotel Amsterdam Oost</a></li>
+          <li><a href="#">Hotel bij Ziggo Dome</a></li>
+          <li><a href="#">Flexwerken Amsterdam Oost</a></li>
+          <li><a href="#">Meeting Room Amsterdam</a></li>
+          <li><a href="#">Groepsdiner Amsterdam</a></li>
+          <li><a href="#">Borrelen Amsterdam Oost</a></li>
+          <li><a href="#">LGBTQIA+ Vriendelijk Hotel Amsterdam</a></li>
+          <li><a href="#">Rolstoelvriendelijk Hotel Amsterdam</a></li>
+        </ul>
       </nav>
     </footer>
 

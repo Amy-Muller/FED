@@ -14,43 +14,54 @@
       <nav aria-label="Hoofdnavigatie">
         <ul>
           <li>
-            <a href="#Home"></a>
+            <a href="index.html">Casa</a>
           </li>
-          <li><a href="#locatie">Locatie</a></li>
-          <li><a href="#call">Call</a></li>
-          <li><a href="schrijf_in">Lees meer over de inschrijfprocedure</a></li>
+          <li>
+            <a href="https://maps.app.goo.gl/s7qi8jUsTshT7pGN6">Locatie</a>
+          </li>
+          <li><a href="tel:+31206651171">Call</a></li>
+          <li>
+            <a href="#boek nu">Maak direct een reservering</a>
+          </li>
           <li>
             <button aria-label="Open navigatiemenu">
               <span></span>
             </button>
             <ul>
-              <li><a href="#">Sleep &#9662;</a></li>
-              <li><a href="east.html">Eat &#9662;</a></li>
-              <li><a href="#">Meet &#9662;</a></li>
-              <li><a href="#">Studenten &#9662;</a></li>
+              <li><a href="#">Sleep</a></li>
+              <li><a href="east.html">Eat</a></li>
+              <li><a href="#">Meet</a></li>
+              <li><a href="#">Studenten</a></li>
               <li><a href="#">Ons verhaal</a></li>
               <li><a href="#">Galerij</a></li>
               <li><a href="#">Event kalender</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">Jobs</a></li>
-              <li><a href="#">FAQ</a></li>
+              <li>
+                <a href="#"
+                  ><abbr title="Frequently asked questions">FAQ</abbr></a
+                >
+              </li>
               <li><a href="#">Bereikbaarheid</a></li>
               <li><a href="#">Parkeren</a></li>
               <li><a href="#">Boek</a></li>
-              <li><a href="#">Nl &#9662;</a></li>
+              <li>
+                <select>
+                  <option>NL</option>
+                  <option>EN</option>
+                </select>
+              </li>
             </ul>
           </li>
         </ul>
       </nav>
-      <button aria-label="Schakel licht/donker modus in">
-        &#9775;
-      </button>
+      <button aria-label="Schakel licht/donker modus in">&#9775;</button>
     </header>
 
     <main>
       <!-- first of type -->
       <section>
-        <h2>East</h2>
+        <h1>East</h1>
         <p>
           Welkom in EAST! De ultieme all-day hangout, waar ieder moment van de
           dag een match vindt met de nieuwe menukaart
@@ -63,14 +74,16 @@
           brandstof.
         </p>
 
+        <h2>Openingstijden</h2>
         <p>
-          Openingstijden <br />
           Maandag - zondag <br />
           08:00 - 23:00 (keuken sluit om 22:00)
         </p>
 
+        <!-- dit mocht van Fasilis -->
+
         <div>
-          <a href="x" title="Bekijk de menukaart">
+          <a href="https://hotelcasa.nl/nl/menu-east-eten/?p=base&c=search" title="Bekijk de menukaart">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 54.5 71.8"
@@ -87,7 +100,7 @@
             >Menu</a
           >
           <!-- bron casa elementcode -->
-          <a href="x" title="Bekijk de evenementen">
+          <a href="https://hotelcasa.nl/nl/evenementen/?p=base&c=search" title="Bekijk de evenementen">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="44.6"
@@ -128,7 +141,7 @@
           </a>
 
           <p>Follow us:</p>
-          <a href="x" title="Bezoek onze Facebook-pagina">
+          <a href="https://www.facebook.com/HotelCasaAmsterdam/" title="Bezoek onze Facebook-pagina">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="var(--fontlightbackground-color)"
@@ -157,7 +170,7 @@
                 height="32"
               /></svg
           ></a>
-          <a href="x" title="Bezoek onze Instagram-pagina">
+          <a href="https://www.instagram.com/hotelcasa_amsterdam/?hl=en" title="Bezoek onze Instagram-pagina">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -186,73 +199,80 @@
 
       <!-- nth-of-type(2) -->
       <section>
-        <div>
-          <img src="images/carousel_foto_1.png" alt="foto casa restaurant" />
-        </div>
-        <div>
-          <img src="images/carousel_foto_2.png" alt="foto casa restaurant" />
-        </div>
-        <div>
-          <img src="images/carousel_foto_3.png" alt="foto casa restaurant" />
-        </div>
-        <div>
-          <img src="images/carousel_foto_4.png" alt="foto casa restaurant" />
-        </div>
-        <div>
-          <img src="images/carousel_foto_5.png" alt="foto casa restaurant" />
-        </div>
+        <h2 class="visually-hidden">
+          Foto's van mensen die dineren in restaurant Casa
+        </h2>
+        <ul>
+          <li>
+            <img src="images/carousel_foto_1.png" alt="foto casa restaurant" />
+          </li>
+          <li>
+            <img src="images/carousel_foto_2.png" alt="foto casa restaurant" />
+          </li>
+          <li>
+            <img src="images/carousel_foto_3.png" alt="foto casa restaurant" />
+          </li>
+          <li>
+            <img src="images/carousel_foto_4.png" alt="foto casa restaurant" />
+          </li>
+          <li>
+            <img src="images/carousel_foto_5.png" alt="foto casa restaurant" />
+          </li>
+        </ul>
       </section>
 
       <!-- nth of type (3)-->
       <section>
-        <h3>Events</h3>
-        <div>
-          <img
-            alt="Foto van meiden lunchen"
-            src="images/bottomless_brunch.png"
-          />
-          <p>Bottomless Weekend Brunch</p>
-
-          <a href="x" title="Knop naar verhaal Maya">
+        <h2>Events</h2>
+        <ul>
+          <li>
             <img
-              src="images/chevron_roze_rechts.png"
-              alt="Knop naar meer info bottemless brunch"
+              alt="Foto van meiden lunchen"
+              src="images/bottomless_brunch.png"
             />
-            <p>Lees meer</p>
-          </a>
-        </div>
+            <p>Bottomless Weekend Brunch</p>
 
-        <div>
-          <img alt="Foto van Cocktail" src="images/cocktail.png" />
-          <p>Cocktails voor €5 op donderdag</p>
+            <a href="x" title="Knop naar verhaal Maya">
+              <img
+                src="images/chevron_roze_rechts.png"
+                alt="Knop naar meer info bottemless brunch"
+              />
+              <p>Lees meer</p>
+            </a>
+          </li>
 
-          <a href="x" title="knop naar informatie bottomless brunch">
-            <img
-              src="images/chevron_roze_rechts.png"
-              alt="knop naar informatie over Happy hour"
-            />
-            <p>Lees meer</p>
-          </a>
-        </div>
+          <li>
+            <img alt="Foto van Cocktail" src="images/cocktail.png" />
+            <p>Cocktails voor €5 op donderdag</p>
 
-        <div>
-          <img alt="Foto van cocktail" src="images/eten_vrienden.png" />
-          <p>Plan je groepsdiner in EAST</p>
+            <a href="x" title="knop naar informatie bottomless brunch">
+              <img
+                src="images/chevron_roze_rechts.png"
+                alt="knop naar informatie over Happy hour"
+              />
+              <p>Lees meer</p>
+            </a>
+          </li>
 
-          <a href="x" title="Knop naar info over groepdiners">
-            <img
-              src="images/chevron_roze_rechts.png"
-              alt="Knop naar info over groepsdiners"
-            />
-            <p>Lees meer</p>
-          </a>
-        </div>
+          <li>
+            <img alt="Foto van cocktail" src="images/eten_vrienden.png" />
+            <p>Plan je groepsdiner in EAST</p>
+
+            <a href="x" title="Knop naar info over groepdiners">
+              <img
+                src="images/chevron_roze_rechts.png"
+                alt="Knop naar info over groepsdiners"
+              />
+              <p>Lees meer</p>
+            </a>
+          </li>
+        </ul>
       </section>
 
       <!-- nth of type (4)-->
       <section>
-        <h3>Contact</h3>
-        <h4>Restaurant East</h4>
+        <h2>Contact</h2>
+        <h3>Restaurant East</h3>
         <p>
           Eerste Ringdijkstraat 2 1097 BC Amsterdam info@east-amsterdam.nl
           +31(0) 20 207 8078
@@ -268,7 +288,7 @@
 
       <!-- nth of type (5)-->
       <section>
-        <h3>FAQ</h3>
+        <h2><abbr title="Frequently Asked Questions">FAQ</abbr></h2>
         <!--bron lesstof details/summary https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details-->
         <details>
           <summary>
@@ -547,39 +567,58 @@
         1097 BC, Amsterdam<br />
         info@hotelcasa.nl
       </p>
-      <div>
-        <a href="#"><img src="images/instagram-icon.png" alt="Instagram" /></a>
-        <a href="#"><img src="images/facebook-icon.png" alt="Facebook" /></a>
-        <a href="#"><img src="images/linkeding-icon.png" alt="LinkedIn" /></a>
-      </div>
 
+      
       <nav>
-        <a href="#">Ons Verhaal</a>
-        <a href="#">Kamers</a>
-        <a href="#">Vergaderingen</a>
-        <a href="#">EAST</a>
-        <a href="#">GAPP</a>
-        <a href="#">Locatie</a>
-        <a href="#">Parkeren</a>
-        <a href="#">Studenten</a>
-        <a href="#">Blog</a>
-        <a href="#">Social Responsibility</a>
-        <a href="#">House Rules</a>
-        <a href="#">Privacy</a>
-        <a href="#">Werken bij</a>
-        <a href="#">FAQ</a>
-      </nav>
-      <nav>
-        <a href="#">Hotel Amstel Station</a>
-        <a href="#">Hotel Amsterdam Arena</a>
-        <a href="#">Hotel Amsterdam Oost</a>
-        <a href="#">Hotel bij Ziggo Dome</a>
-        <a href="#">Flexwerken Amsterdam Oost</a>
-        <a href="#">Meeting Room Amsterdam</a>
-        <a href="#">Groepsdiner Amsterdam</a>
-        <a href="#">Borrelen Amsterdam Oost</a>
-        <a href="#">LGBTQIA+ Vriendelijk Hotel Amsterdam</a>
-        <a href="#">Rolstoelvriendelijk Hotel Amsterdam</a>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/hotelcasa_amsterdam/?hl=en"
+              ><img src="images/instagram-icon.png" alt="Instagram"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/HotelCasaAmsterdam/"
+              ><img src="images/facebook-icon.png" alt="Facebook"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/hotel-casa/"
+              ><img src="images/linkeding-icon.png" alt="LinkedIn"
+            /></a>
+          </li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Ons Verhaal</a></li>
+          <li><a href="#">Kamers</a></li>
+          <li><a href="#">Vergaderingen</a></li>
+          <li><a href="#">EAST</a></li>
+          <li><a href="#">GAPP</a></li>
+          <li><a href="#">Locatie</a></li>
+          <li><a href="#">Parkeren</a></li>
+          <li><a href="#">Studenten</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Social Responsibility</a></li>
+          <li><a href="#">House Rules</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Werken bij</a></li>
+          <li>
+            <a href="#"><abbr title="Frequently asked questions">FAQ</abbr></a>
+          </li>
+        </ul>
+
+        <ul>
+          <li><a href="#">Hotel Amstel Station</a></li>
+          <li><a href="#">Hotel Amsterdam Arena</a></li>
+          <li><a href="#">Hotel Amsterdam Oost</a></li>
+          <li><a href="#">Hotel bij Ziggo Dome</a></li>
+          <li><a href="#">Flexwerken Amsterdam Oost</a></li>
+          <li><a href="#">Meeting Room Amsterdam</a></li>
+          <li><a href="#">Groepsdiner Amsterdam</a></li>
+          <li><a href="#">Borrelen Amsterdam Oost</a></li>
+          <li><a href="#">LGBTQIA+ Vriendelijk Hotel Amsterdam</a></li>
+          <li><a href="#">Rolstoelvriendelijk Hotel Amsterdam</a></li>
+        </ul>
       </nav>
     </footer>
     <script src="scripts/script.js"></script>

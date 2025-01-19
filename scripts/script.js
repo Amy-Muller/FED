@@ -7,33 +7,34 @@ const dropdownMenu = document.querySelector("nav ul li ul");
 const overlay = document.querySelector("header > div");
 
 if (menuButton && dropdownMenu) {
-    menuButton.addEventListener("click", () => {
-        // de button animatie
-        menuButton.classList.toggle("active");
-        
-        // de dropdown 
-        dropdownMenu.classList.toggle("show");
+  menuButton.addEventListener("click", () => {
+    // de button animatie
+    menuButton.classList.toggle("active");
 
-        //de overlay
-        overlay.classList.toggle("active");
-    });
+    // de dropdown
+    dropdownMenu.classList.toggle("show");
+
+    //de overlay
+    overlay.classList.toggle("active");
+  });
 }
 
-/* ////////////////////////////////////////
-           SLIDER INDEX PAGINA - regel 27-59 gemaakt met de volgende bron: https://www.youtube.com/watch?v=uAAD3mmQGRQ
-/////////////////////////////////////// */
+// Bron: Sanne XD
 
+/* ////////////////////////////////////////
+           SLIDER INDEX PAGINA - regel 27-55 gemaakt met de volgende bron: https://www.youtube.com/watch?v=uAAD3mmQGRQ
+/////////////////////////////////////// */
 var slider_img = document.querySelector(
-  "body > main > section:nth-of-type(7) div > img"
+  "body > main > section:nth-of-type(6) div > img"
 );
 
 var images = [
-    'djbooth_casa.png',
-    'proosten_casa.png',
-    'muziek_casa.png',
-    'shotjes_casa.png',
-    'spelletjesavond_casa.png',
-    'amerika_aesthetic_casa.png'
+  "djbooth_casa.png",
+  "proosten_casa.png",
+  "muziek_casa.png",
+  "shotjes_casa.png",
+  "spelletjesavond_casa.png",
+  "amerika_aesthetic_casa.png",
 ];
 
 var i = 0;
@@ -54,6 +55,8 @@ function setImg() {
   slider_img.setAttribute("src", "images/" + images[i]);
 }
 
+
+
 /* ////////////////////////////////////////
        LIGHT DARK MODE 
 /////////////////////////////////////// */
@@ -63,55 +66,36 @@ function myFunction() {
   element.classList.toggle("dark-mode");
 }
 
-document.querySelector("header>button").addEventListener("click", myFunction);
+document.querySelector("header > button").addEventListener("click", myFunction);
 
 /* ////////////////////////////////////////
        Embedding video 
 /////////////////////////////////////// */
 var myVideo = document.querySelector("video");
 
-document.querySelector("section:nth-of-type(3) button:first-of-type").addEventListener("click", playPauze);
+document.querySelector("main > section:nth-of-type(3) button:first-of-type").addEventListener("click", playPauze);
 
-function playPauze(){
-  if(myVideo.paused)
-  myVideo.play();
-else myVideo.pause()
+function playPauze() {
+  if (myVideo.paused) myVideo.play();
+  else myVideo.pause(); 
 }
+// regel 76 & 77 gemaakt met de uitleg van https://www.w3schools.com/Html/tryit.asp?filename=tryhtml5_video_js_prop
 
-const geluidUit = document.querySelector("section:nth-of-type(3) button:nth-of-type(2)");
-  
-geluidUit.addEventListener('click', () => {
-    myVideo.muted = !myVideo.muted;
-    geluidUit.textContent = myVideo.muted ? 'Geluid aan' : 'Geluid uit';
-  });
+const geluidUit = document.querySelector(
+  "section:nth-of-type(3) button:nth-of-type(2)"
+);
 
-const geluidSlider = document.querySelector("section:nth-of-type(3) input")
-
-geluidSlider.addEventListener('input', () => {
-  myVideo.volume = parseFloat(geluidSlider.value); // Converteer de waarde naar een getal
+geluidUit.addEventListener("click", () => {
+  myVideo.muted = !myVideo.muted;
+  geluidUit.textContent = myVideo.muted ? "Geluid aan" : "Geluid uit";
 });
 
-/* ////////////////////////////////////////
-       ANIMATION ON SCROLL - bron lesstof https://www.youtube.com/watch?v=T33NN_pPeNI
-/////////////////////////////////////// */
+// regel 87 gemaakt met behulp van een "programmeerblog" https://forum.bubble.io/t/javascript-for-muting-html5-video/335035
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("main > section:nth-of-type(3) section");
 
-  // viewport instellingen
-  const observerOptions = {
-    threshold: 0.3,
-  };
+// Slider gemaakt (regel 99 achterste helft) met informatie https://stackoverflow.com/questions/67343937/control-audio-with-a-slider 
+const geluidSlider = document.querySelector("section:nth-of-type(3) input"); 
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show"); 
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach((section) => observer.observe(section));
+geluidSlider.addEventListener("input", () => {
+  myVideo.volume = geluidSlider.value; 
 });
-
