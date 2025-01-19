@@ -309,7 +309,53 @@ details > summary > span {
 
 
 
+<details>
+  <summary>uitwerken voor eindgesprek</summary>
 
+### Gekregen feedback tijdens gesprek: 
+--Alle sections moeten WEG
+
+--Alles moet netter geschreven worden, zonder onnodige notities, zonder dubbele styling in meerder documenten. Documenten kunnen ook samengevoegd worden zodat het overzichtelijker blijft. 
+
+-- Haal de onnodige on-scroll animatie weg. 
+
+-- Voeg de high contrast mode toe
+
+-- Niet zo grof de prefers motion mode doen op alles, maar per animatie instellen
+
+-- Zet je styling op volgorde van het document en niet zo zeer op element soort. 
+
+--Je komt nog 0.5 punt voor de surface plane te kort, dus ik zou de video erin programmeren. 
+
+-- De vinkjes binnen de checkboxen zijn niet goed gepositioneerd op een responsive manier. 
+
+
+### Vragen voor meeting donderdag 16 januari: 
+-- VRAAG: Mag ik wel DIVS gebruiken op de plek van section 3 op mijn east.html (events) pagina. om op de juiste manier de grid te kunnen toepassen, zonder dat dit impact heeft op de h3, zoals ik nu heb gedaan. ————> MAAK ER EEN LIST VAN. 
+
+-- VRAAG: Gebruik ik bij east.html, op de section van de carousel divs of sectie? Want een sectie moet normaal een h2 of een andere heading hebben maar dat heeft ie niet. ———> Maak hier ook een list van en H2 toevoegen (is al toegevoegd)
+
+--- VRAAG: Hoe zorg ik bij east html ervoor dat events buiten de sectie valt. Zodat deze niet groter en kleiner word. Zonder het gebruik te maken van een extra div.. ———>MAAK ER EEN LIST VAN. 
+
+### Wat heb ik aangepast: 
+--Ik heb eerst het document (van onnodige) sectie's en divs proberen te verwijderen, maar ik kon door de bomen het bos niet meer zien. En heb uiteindelijk besloten om alles regel per regel te kopieren en om te schrijven naar een ander document. Hierdoor heb ik geleerd dat op veel plekken waar ik "divs" of "secties" gebruik ik bijvoorbeeld ul had moeten gebruiken, waardoor ik daarop weer styling kon doen. In mijn hoofd zijn lijsten heel zwart/wit "boter, broccoli, kaas" of "1,2,3" maar het kunnen natuurlijk grotere blokken zijn. Met in elke li weer meerdere elementen/onderdelen. 
+
+-- Ik heb een high-contrast mode toegevoegd op de juiste manier en ook de reduce motion toegevoegd per animatie, i.p.v één overkoepelende mediaquery. 
+
+-Ik heb mijn hele styling dus ook opnieuw kunnen/moeten maken waardoor ik een duidelijkere volgorde heb gemaakt. Ik merkte dat dit vooral voor mijzelf veel makkelijker werken was, omdat ik nu niet bij verschillende "element-categorieën" aan het zoeken was om iets aan te passen. 
+
+-- Ik heb de video geprogrammerd met verschillende buttons. Ik had al eerder "input type" gebruikt voor bv de submit knop in de footer, hierbij had ik ook al de input type range voorbij zien komen, deze wilde ik dus gelijk toevoegen aan mijn video, maar de uitdaging zat hier wel echt in het programmeren. 
+
+-- Ik heb Abbr toegevoegd en ik heb de sociale media kanalen elk doorgelinkt. 
+
+-- Ik heb de WCAG checklist afgerond en beter accesible gemaakt, ik scoorde bijvoorbeeld te laag op contrast bij mijn reviews op index.html, daar heb ik nu dus de kleuren van aangepast. 
+
+-- Ik heb de positite van de vinkjes binnen de checkboxen aangepast, en ik heb ul en li toegevoegd binnen de footer. 
+
+-- Ik heb overal alles probberen op te schonen en netter te maken. Puntjes op de i gezet, waar ik vorige keer geen tijd voor heb gehad. Ook ben ik er nog een keer met de voiceover doorheen gegaan voor focus points. 
+
+
+</details>
 
 ## Bronnenlijst
 
@@ -321,7 +367,25 @@ details > summary > span {
   Nb. Vermeld de bronnen ook in je code.
 
   1. SLIDER INDEX PAGINA - regel 27-59 van javascript gemaakt met de volgende bron: https://www.youtube.com/watch?v=uAAD3mmQGRQ 
+
   2. ANIMATION ON SCROLL - bron lesstof https://www.youtube.com/watch?v=T33NN_pPeNI 
-  3.https://www.w3schools.com/howto/howto_js_slideshow.asp slideshow
+
+3. Automatic slideshow east.html
+https://www.w3schools.com/howto/howto_js_slideshow.asp
+
+Class list begrijpen
+https://developer.mozilla.org/en-US/docs/Web/API/Element/classList.com
+
+transform toevoegen aan javascript 
+https://www.w3schools.com/jsref/prop_style_transform.asp
+
+//  ChatGPT4o - toen mijn eerste versie code niet goed werkte van de automatische slider.  
+
+4. Embedding video 
+https://www.w3schools.com/Html/tryit.asp?filename=tryhtml5_video_js_prop
+
+https://forum.bubble.io/t/javascript-for-muting-html5-video/335035
+
+https://stackoverflow.com/questions/67343937/control-audio-with-a-slider 
 
 </details>
