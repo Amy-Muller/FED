@@ -17,57 +17,42 @@
   src: url("../lettertype/Roboto");
 }
 
-/*////////////////////////////////
-              KLEUREN
-  //////////////////////////////////*/
-
-:root {
-  color-scheme: light dark;
-
-  --header-bg: #ace5fa;
-  --main-color: #ff005d;
-  --fontlightbackground-color: black;
-  --fontdarkbackground-color: white;
-  --background-footer: black;
-  --whitefont-footer: white;
-  --light-bg-top: #ace5fa;
-  --light-bg-bottom: white;
-  --review-pink: #f9c2c9;
-  --review-blue: #71cef3;
-  --review-green: #17a74b;
-  --background-body: white;
-  --yellow-background: #e6d69c;
-  --grey-background: #bfc4b4;
-}
-
-.dark-mode {
-  --header-bg: #284048;
-  --fontlightbackground-color: white;
-  --fontdarkbackground-color: black;
-  --background-footer: rgb(39, 39, 39);
-  --light-bg-top: #284048;
-  --light-bg-bottom: black;
-  --review-pink: #a44552;
-  --review-blue: #0f4f69;
-  --review-green: #16552d;
-  --background-body: black;
-  --yellow-background: #3d3414;
-  --grey-background: #41433d;
-}
-
 /* ///////////////////////////
              MAIN 
   /////////////////////////// */
 
 h1 {
-  color: white;
+  color: var(--whitefont-footer);
   font-size: calc(16px + 2 * ((100vw - 600px) / 440));
 }
 
-@media (min-width:600px) {
+h2 {
+  margin: 0.5em;
+  font-size: 2.5em;
+  color: var(--fontlightbackground-color);
+}
+
+H3 {
+  font-size: 1.5em;
+  color: var(--fontlightbackground-color);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  order: -1;
+}
+
+H3::after {
+  content: "";
+  height: 4px;
+  background-color: var(--fontlightbackground-color);
+  margin-left: 1em;
+}
+
+@media (min-width: 600px) {
   h2 {
     font-size: calc(40px + 40 * ((100vw - 600px) / 440));
-  }}
+  }
+}
 
 main > section:first-of-type > h2:first-of-type {
   font-size: calc(40px + 40 * ((100vw - 400px) / 440));
@@ -99,6 +84,10 @@ section:first-of-type div {
   flex-wrap: wrap;
 }
 
+main > section:first-of-type > div:only-of-type > img:nth-of-type(2) {
+  display: none;
+}
+
 @media (min-width: 600px) {
   main > section:first-of-type > div:only-of-type > img:first-of-type {
     display: block;
@@ -117,6 +106,10 @@ section:first-of-type div {
   }
 }
 
+main > section:first-of-type > p > a {
+  color: var(--main-color);
+}
+
 /* section:nth-of-type(2) */
 
 main > section:nth-of-type(2) {
@@ -126,7 +119,7 @@ main > section:nth-of-type(2) {
 
 /* section:nth-of-type(3) */
 
-section:nth-of-type(3) video{
+section:nth-of-type(3) video {
   border: none;
   width: 100%;
   height: auto;
@@ -139,35 +132,41 @@ video:focus-visible {
 }
 section:nth-of-type(3) div {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: space-between;
-    gap: 0.5em;
+  gap: 0.5em;
 }
 section:nth-of-type(3) label {
   display: flex;
-  align-items: center; 
-    gap: 0.5em;
-    font-family: "Casa-bodytekst", sans-serif;
+  align-items: center;
+  gap: 0.5em;
+  font-family: "Casa-bodytekst", sans-serif;
+  color:var(--fontlightbackground-color);
+}
+
+main > section:nth-of-type(3) input{
+border-radius: 15px;
 }
 
 input[type="range"] {
-  appearance: none;
   width: 100%;
+  accent-color: var(--main-color);
   height: 6px;
   background: #ddd;
   border-radius: 20px;
-padding: 0.8em 0.4em;
-;}
-
-section:nth-of-type(3) button {
-  background-color: var(--main-color);
-  color: var(--whitefont-footer);
-  border: none;
-  padding:1em;
-  border-radius: 5px;
-  font-family: "Casa-bodytekst", sans-serif;
+  padding: 0.8em 0.4em;
 }
 
+section:nth-of-type(3) button {
+  background-color: var(--review-pink);
+  color: var(--review-pink-text);
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  font-family: "Casa-bodytekst", sans-serif;
+  cursor: pointer;
+
+}
 
 /* section:nth-of-type(4) */
 main > section:nth-of-type(4) {
@@ -189,11 +188,19 @@ main > section:nth-of-type(4) > h3 {
 /* section:nth-of-type(5) */
 
 main > section li {
-  flex-grow: 1;
-  color: var(--whitefont-footer);
-  font-family: "Casa-bodytekst", sans-serif;
-  font-size: calc(14px + 2 * ((100vw - 400px) / 400));
   padding: 1em;
+}
+
+main > section:nth-of-type(5) li:first-of-type p {
+  color: var(--review-pink-text);
+}
+
+main > section:nth-of-type(5) li:nth-of-type(2) p {
+  color: var(--review-blue-text);
+}
+
+main > section:nth-of-type(5) li:nth-of-type(3) p {
+  color: var(--review-green-text);
 }
 
 section:nth-of-type(5) img {
@@ -247,66 +254,72 @@ section:nth-of-type(5) p {
 /* section:nth-of-type(6) */
 
 section:nth-of-type(6) img {
-    width: 100%;
-  }
+  width: 100%;
+}
 
-  section:nth-of-type(2) button:focus-visible,
-  section:nth-of-type(7) button:focus-visible,
-  main > section:nth-of-type(4) > button:focus-visible {
-      outline: 2px dashed var(--main-color);
-      outline-offset: 2px;
-  }
+section:nth-of-type(2) button:focus-visible,
+section:nth-of-type(7) button:focus-visible,
+main > section:nth-of-type(4) > button:focus-visible {
+  outline: 2px dashed var(--main-color);
+  outline-offset: 2px;
+}
 
- section > button {
-    height: 60px;
-    width: 60px;
-    background-color: var(--fontdarkbackground-color);
-    color: var(--main-color);
-    border: 3px solid var(--main-color);
-    border-radius: 50%;
-    padding:10px;
-    justify-content: center;
-    margin:1em;
+section > button {
+  height: 60px;
+  width: 60px;
+  background-color: var(--fontdarkbackground-color);
+  color: var(--main-color);
+  border: 3px solid var(--main-color);
+  border-radius: 50%;
+  padding: 10px;
+  justify-content: center;
+  margin: 1em;
   animation-name: buttonDubbelTwist;
   animation-duration: 7s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count:infinite;
+  animation-iteration-count: infinite;
 }
 
 @keyframes buttonDubbelTwist {
-    0% {
-      transform: rotate(0deg);
-      scale: 1;
-    }
-    2.5% {
-      transform: rotate(45deg);
-      scale: 1.1;
-    }
-    5% {
-      transform: rotate(-45deg);
-      scale: 1;
-    }
-    7.5% {
-      transform: rotate(25deg);
-      scale: 1.1;
-    }
-  
-    10% {
-      transform: rotate(-25deg);
-      scale: 1;
-    }
-  
-    12.5% {
-      transform: rotate(0);
-      scale: 1;
-    }
-  
-    100% {
-      transform: rotate(0);
-      scale: 1;
-    }
+  0% {
+    transform: rotate(0deg);
+    scale: 1;
+  }
+  2.5% {
+    transform: rotate(45deg);
+    scale: 1.1;
+  }
+  5% {
+    transform: rotate(-45deg);
+    scale: 1;
+  }
+  7.5% {
+    transform: rotate(25deg);
+    scale: 1.1;
   }
 
-section > button:hover {
-    background: #111;
+  10% {
+    transform: rotate(-25deg);
+    scale: 1;
   }
+
+  12.5% {
+    transform: rotate(0);
+    scale: 1;
+  }
+
+  100% {
+    transform: rotate(0);
+    scale: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section > button {
+    animation: none;
+  }
+}
+
+section > button:hover {
+  background: #111;
+}

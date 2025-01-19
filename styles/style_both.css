@@ -32,12 +32,16 @@
   --whitefont-footer: white;
   --light-bg-top: #ace5fa;
   --light-bg-bottom: white;
-  --review-pink: #f9c2c9;
-  --review-blue: #71cef3;
-  --review-green: #17a74b;
+  --review-pink: #f0adb6;
+  --review-pink-text: #9f414e;
+  --review-blue: #71bbd8;
+  --review-blue-text: #03496D;
+  --review-green: #5cc181;
+  --review-green-text: #224A2F;
   --background-body: white;
   --yellow-background: #e6d69c;
   --grey-background: #bfc4b4;
+  --button-video: #fa939d;
 }
 
 .dark-mode {
@@ -48,15 +52,70 @@
   --light-bg-top: #284048;
   --light-bg-bottom: black;
   --review-pink: #a44552;
+  --review-pink-text: white;
   --review-blue: #0f4f69;
+  --review-blue-text: white;
   --review-green: #16552d;
+  --review-green-text: white;
   --background-body: black;
   --yellow-background: #3d3414;
   --grey-background: #41433d;
 }
+
+@media (prefers-contrast: more) {
+   :root{
+    --header-bg: white;
+  --main-color: #ff005d;
+  --fontlightbackground-color: black;
+  --fontdarkbackground-color: white;
+  --background-footer: black;
+  --whitefont-footer: white;
+  --light-bg-top: white;
+  --light-bg-bottom: white;
+  --review-pink: #ff005d;
+  --review-pink-text: black;
+  --review-blue: #00FFEE;
+  --review-blue-text: black;
+  --review-green: #39FF14;
+  --review-green-text:  black;
+  --background-body: white;
+  --yellow-background: white;
+  --grey-background: #d0d1d0;
+   }
+
+   .dark-mode{
+    --header-bg: black;
+    --main-color: #ff005d;
+    --fontlightbackground-color: white;
+    --fontdarkbackground-color: black;
+    --background-footer: #000a37;
+    --light-bg-top: #284048;
+    --light-bg-bottom: black;
+  --review-pink: #ff005d;
+  --review-pink-text: black;
+  --review-blue: #00FFEE;
+  --review-blue-text: black;
+  --review-green: #39FF14;
+  --review-green-text:  black;
+    --background-body: black;
+    --yellow-background: #3d3414;
+    --grey-background: #41433d;
+   }
+}
+
 /* ////////////////////////////////////////
           TEXT STYLES
   /////////////////////////////////////// */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
 
 h1,
 h2,
@@ -65,15 +124,6 @@ h3 {
   text-transform: uppercase;
 }
 
-h1 {
-  color: var(--whitefont-footer);
-}
-
-h2 {
-  font-size: 2.5em;
-  margin: 0.5em;
-  color: var(--fontlightbackground-color);
-}
 
 section:first-of-type h2:first-of-type {
   position: relative;
@@ -89,21 +139,10 @@ section:first-of-type h2:first-of-type {
   }
 }
 
-H3 {
-  font-size: 1.5em;
-  color: var(--fontlightbackground-color);
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: baseline;
-  order: -1;
-}
-
-H3::after {
-  content: "";
-  height: 4px;
-  background-color: var(--fontlightbackground-color);
-  margin-left: 1em;
-}
+@media (prefers-reduced-motion: reduce) {
+  * section:first-of-type h2:first-of-type {
+    animation:none;}
+  }
 
 h4 {
   font-size: 1.2em;
@@ -210,6 +249,10 @@ header > nav ul > li > a {
 header > nav ul > li ul > li:hover {
   background-color: var(--main-color);
   color: white;
+}
+
+header > nav ul > li ul > li:nth-of-type(-n + 4) a::after {
+  content:"▾";
 }
 
 header > nav ul > li ul > li:hover a {
@@ -325,6 +368,20 @@ nav button:first-of-type.active span {
   }
 }
 
+header select {
+  border:none;
+  background: none;
+  padding: 5px 7px;
+  color: black;
+  font-family: "nav-tekst", Arial;
+  font-size: 1em;
+}
+
+header select:hover {
+  color: white;
+}
+
+
 /* DONKERE OVERLAY NAV*/
 
 header > div:only-of-type {
@@ -379,6 +436,17 @@ header > div:only-of-type.active {
     }
     100% {
       height:1.3em;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    @keyframes darkmodeUitschuif {
+      from {
+        height: 1.3em;
+      }
+      to {
+        height: 1.3em;
+      }
     }
   }
   
@@ -441,6 +509,12 @@ section a:has(p) > img {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  section a:has(p) > img {
+    animation:none;
+  }
+}
+
 section a:has(img) > p {
   color: var(--main-color);
   font-family: sans-serif;
@@ -455,6 +529,7 @@ section a:has(img) > p {
 section a:has(p):has(img) {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 
 /*/////////////////////////
@@ -487,8 +562,8 @@ footer > p:nth-of-type(2) {
 /*formulier en checkboxen*/
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: block;
+  width:80%;
   color: var(--whitefont-footer);
 }
 
@@ -502,7 +577,8 @@ input[type="submit"] {
   color: var(--whitefont-footer);
   border: 2px solid var(--whitefont-footer);
   cursor: pointer;
-  flex: 1;
+  width: 8em;
+  display: inline-block;
 }
 
 input[type="submit"]:hover {
@@ -523,6 +599,8 @@ input[type="email"] {
   border: 2px solid var(--whitefont-footer);
   cursor: pointer;
   flex: 2;
+  width: calc(80% - 8em);
+  display: inline-block;
 }
 
 input[type="email"]:focus-visible {
@@ -537,6 +615,7 @@ input[type="checkbox" i] {
   width: 20px;
   height: 20px;
   cursor: pointer;
+  position: relative;
 }
 
 input[type="checkbox"]:focus-visible {
@@ -546,22 +625,23 @@ input[type="checkbox"]:focus-visible {
 
 input[type="checkbox" i]:hover::after {
   content: "✔";
-  font-size: 2.5em;
+  font-size: 3em;
   color: white;
   position: absolute;
-  top: 15%;
-  left: 4%;
+  top: -0.2em;
+  left: 0em;
   transform: translate(0, 0);
 }
 
 input[type="checkbox" i]:checked::after {
   content: "✔";
-  font-size: 2.5em;
+  font-size:3em;
   color: var(--main-color);
   position: absolute;
-  top: 15%;
-  left: 4%;
+  top: -0.2em;
+  left: 0em;
   transform: translate(0, 0);
+
 }
 
 footer label {
@@ -575,6 +655,25 @@ footer label {
 }
 
 /*Gegevens*/
+
+footer ul:first-of-type {
+  display: flex;
+  list-style: none;
+  margin:0 0 2.5em 0;
+  padding:0;
+  justify-content: center;
+}
+
+footer ul:nth-of-type(2),
+footer ul:nth-of-type(3){
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+}
+
+
+
 footer a img {
   width: 25px;
   margin: 0.5em;
@@ -603,5 +702,3 @@ footer > p:nth-of-type(2) {
   color: var(--whitefont-footer);
   text-align: center;
 }
-
-/* Vraag: Hoe kan ik mijn footer de submit en email label goedkrijgen? */
